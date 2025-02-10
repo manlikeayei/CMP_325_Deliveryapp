@@ -26,17 +26,14 @@ public class DeliveryController {
         return "index";
     }
 
-    @GetMapping("/about")
-    public String about(){
-        return "about";
-    }
+    
 
     @GetMapping("/create-vehicle")
     public String createVehicle(Model model){
         Vehicle vehicle = new Vehicle();
         model.addAttribute("vehicle", vehicle)
                 .addAttribute("allVehicles", vehicleService.getAllVehicles());
-        return "feature";
+        return "features";
     }
 
     @PostMapping("/post-vehicle")
@@ -44,6 +41,6 @@ public class DeliveryController {
         String message = "Vehicle created successfully";
         vehicleService.createVehicle(vehicle);
         model.addAttribute("message", message);
-        return "feature";
+        return "features";
     }
 }
