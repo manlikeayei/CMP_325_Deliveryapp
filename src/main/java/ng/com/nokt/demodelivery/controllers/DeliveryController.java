@@ -43,7 +43,8 @@ public class DeliveryController {
         String message = "Vehicle created successfully";
         vehicleService.createVehicle(vehicle);
         model.addAttribute("message", message);
-        return "features";
+        model.addAttribute("vehicle", vehicle).addAttribute("allVehicles", vehicleService.getAllVehicles());
+        return "redirect:/create-vehicle";
     }
 
     @GetMapping("/create-item")
@@ -59,7 +60,7 @@ public class DeliveryController {
         String message = "Item added to vehicle successfully";
         itemService.createItem(item);
         model.addAttribute("message", message);
-        return "features";
+        return "redirect:/create-vehicle";
     }
     
     
