@@ -1,5 +1,6 @@
 package ng.com.nokt.demodelivery.controllers;
 
+import ng.com.nokt.demodelivery.entites.Item;
 import ng.com.nokt.demodelivery.entites.Vehicle;
 import ng.com.nokt.demodelivery.services.ItemService;
 import ng.com.nokt.demodelivery.services.VehicleService;
@@ -9,11 +10,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+
 @Controller
 public class DeliveryController {
 
     private final VehicleService vehicleService;
-    @SuppressWarnings("unused")
+
     private final ItemService itemService;
 
     public DeliveryController(VehicleService vehicleService, ItemService itemService) {
@@ -43,4 +45,24 @@ public class DeliveryController {
         model.addAttribute("message", message);
         return "features";
     }
+
+    @GetMapping("/create-item")
+    public String createItem(Model model){
+    Item item = new Item();
+    model.addAttribute("item", item)
+           .addAttribute("allItems", itemService.getAllItems());
+           return "addItems";
+    }
+
+    @PostMapping("/post-item")
+    public String postItem(Model model, @ModelAttribute("item") Item item){
+        String message = "Item added to vehicle successfully";
+        itemService.createItem(item);
+        model.addAttribute("message", message);
+        return "features";
+    }
+    
+    
+    
+
 }

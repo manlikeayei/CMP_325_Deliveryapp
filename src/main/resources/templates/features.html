@@ -83,30 +83,30 @@ https://templatemo.com/tm-543-breezed
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="inputEmail4">Name</label>
-                <input type="text" class="form-control" id="inputEmail4" placeholder="Your Name" th:field="*{name}">
+                <input type="text" class="form-control" id="inputEmail4" placeholder="Your Name" th:field="*{name}" name="name">
               </div>
               <div class="form-group col-md-6">
                 <label for="inputPassword4">Status</label>
-                <input type="text" class="form-control" id="inputPassword4" placeholder="Status" th:field="*{status}">
+                <input type="text" class="form-control" id="inputPassword4" placeholder="Status" th:field="*{status}" name="status">
               </div>
             </div>
             <div class="form-group">
               <label for="inputAddress">Plate Number</label>
-              <input type="text" class="form-control" id="inputAddress" placeholder="Plate Number" th:field="*{plateNumber}">
+              <input type="text" class="form-control" id="inputAddress" placeholder="Plate Number" th:field="*{plateNumber}" name="plateNumber">
             </div>
             <div class="form-group">
               <label for="inputAddress2">Vehicle Type</label>
-              <input type="text" class="form-control" id="inputAddress2" placeholder="Vehicle type" th:field="*{type}">
+              <input type="text" class="form-control" id="inputAddress2" placeholder="Vehicle type" th:field="*{type}" name="type">
             </div>
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="inputCity">Carrying Weight</label>
-                <input type="number" class="form-control" id="inputCity" placeholder="0.0" th:field="*{carryingWeight}">
+                <input type="text" class="form-control" id="inputCity" placeholder="Carrying Weight" th:field="*{carryingWeight}" value="0.0" name="carryingWeight">
               </div>
               <div class="form-group">
                 
                   <label for="fuelCapacity">Fuel Capacity</label>
-                  <input type="number" class="form-control" id="inputCity" placeholder="0.0" th:field="*{fuelCapacity}">
+                  <input type="text" class="form-control" id="inputCity" placeholder="Fuel Capacity" th:field="*{fuelCapacity}" value="0.0" name="fuelCapacity">
                 </div>
               </div>
              
@@ -114,4 +114,37 @@ https://templatemo.com/tm-543-breezed
             <button type="submit" class="btn btn-primary" style="background-color: #5fb759;">Submit</button>
           </form>
         </div>
+
+
+
+
+
+
+
+
+
+   <!--     <div class="col-lg-4">
+        <form method="post" enctype="multipart/form-data" th:action="@{/post-item}" th:object="${item}">
+          <div class="row g-3">
+              <div class="col-12 col-sm-6">
+                  <input type="text" id="itemname"  class="form-control border-0" placeholder="Item Name" style="height: 55px;">
+              </div>
+             
+              <div class="col-12 col-sm-6">
+                  <input type="text" id="itemcode"  class="form-control border-0" placeholder="Your Item Code" style="height: 55px;">
+              </div>
+              <div class="col-12 col-sm-6">
+                  <input type="text" id="itemweight"  class="form-control border-0" placeholder="Item Weight" style="height: 55px;" value="0.0">
+              </div>
+              <div class="col-12">
+                  <button class="btn btn-primary w-100 py-3" type="submit">Submit</button>
+              </div>
+          </div>
+      </form>
+  </div>   
+  -->
+
+
+  <div class="col-12">
+    <a href="/create-item"> <button class="btn btn-primary w-100 py-3" type="submit">Add Items to Vehicle</button></a>
     </body>
