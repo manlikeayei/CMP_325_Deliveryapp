@@ -57,9 +57,9 @@ public class DeliveryController {
 
     @PostMapping("/post-item")
     public String postItem(Model model, @ModelAttribute("item") Item item){
-        String message = "Item added to vehicle successfully";
+        
         itemService.createItem(item);
-        model.addAttribute("message", message);
+        model.addAttribute("item", item).addAttribute("allItems", itemService.getAllItems());
         return "redirect:/create-vehicle";
     }
     
