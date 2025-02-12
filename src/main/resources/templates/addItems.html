@@ -35,14 +35,14 @@ https://templatemo.com/tm-543-breezed
         <form method="post" enctype="multipart/form-data" th:action="@{/post-item}" th:object="${item}">
             <div class="row g-3">
                 <div class="col-12 col-sm-6">
-                    <input type="text" id="itemname"  class="form-control border-0" placeholder="Item Name" style="height: 55px;">
+                    <input type="text" id="itemname"  class="form-control border-0" placeholder="Item Name" style="height: 55px;" name="name">
                 </div>
                
                 <div class="col-12 col-sm-6">
-                    <input type="text" id="itemcode"  class="form-control border-0" placeholder="Your Item Code" style="height: 55px;">
+                    <input type="text" id="itemcode"  class="form-control border-0" placeholder="Your Item Code" style="height: 55px;" name="code">
                 </div>
                 <div class="col-12 col-sm-6">
-                    <input type="text" id="itemweight"  class="form-control border-0" placeholder="Item Weight" style="height: 55px;" value="0.0">
+                    <input type="text" id="itemweight"  class="form-control border-0" placeholder="Item Weight" style="height: 55px;" value="0.0" name="weight">
                 </div>
                 <div class="col-12">
                    <a href="/post-item"> <button class="btn btn-primary w-100 py-3" type="submit">Submit</button></a>
@@ -51,5 +51,26 @@ https://templatemo.com/tm-543-breezed
         </form>
     </div>
 
+
+
+
+ <!--   <div class="new submit">
+        <body>
+            <h2>Add Item to Vehicle - Plate Number: <span th:text="${vehicle.plateNumber}"></span></h2>
+        
+            <form th:action="@{/vehicle/{plateNumber}/add-item(plateNumber=${vehicle.plateNumber})}" method="POST">
+                <div>
+                    <label for="itemId">Choose an Item:</label>
+                    <select id="itemId" name="itemId">
+                        <option value="" disabled selected>Select Item</option>
+                        <option th:each="item : ${availableItems}" th:value="${item.id}" th:text="${item.name}"></option>
+                    </select>
+                </div>
+        
+                <button type="submit">Add Item</button>
+            </form>
+    </div>
+
+    -->
 
     </body>

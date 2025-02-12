@@ -4,11 +4,16 @@ import ng.com.nokt.demodelivery.entites.Item;
 import ng.com.nokt.demodelivery.entites.Vehicle;
 import ng.com.nokt.demodelivery.services.ItemService;
 import ng.com.nokt.demodelivery.services.VehicleService;
+
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 
 @Controller
@@ -63,7 +68,19 @@ public class DeliveryController {
         return "redirect:/create-vehicle";
     }
     
-    
-    
+     /*  @GetMapping("/vehicle/{plateNumber}/add-item")
+    public String showAddItemForm(@PathVariable String plateNumber, Model model) {
+        // Get the vehicle by plate number
+        Vehicle vehicle = vehicleService.getVehicleByPlateNumber(plateNumber);
+        List<Item> availableItems = itemService.getAllItems(); 
+        model.addAttribute("vehicle", vehicle);
+        model.addAttribute("availableItems", availableItems);
+
+        return "addItems";
+    }
+*/
+
+
+
 
 }
