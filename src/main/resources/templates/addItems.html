@@ -45,7 +45,7 @@ https://templatemo.com/tm-543-breezed
                     <input type="text" id="itemweight"  class="form-control border-0" placeholder="Item Weight" style="height: 55px;" value="0.0" name="weight">
                 </div>
                 <div class="col-12">
-                   <a href="/post-item"> <button class="btn btn-primary w-100 py-3" type="submit">Submit</button></a>
+                   <button class="btn btn-primary w-100 py-3" type="submit">Submit</button>
                 </div>
             </div>
         </form>
@@ -53,24 +53,28 @@ https://templatemo.com/tm-543-breezed
 
 
 
-
- <!--   <div class="new submit">
-        <body>
-            <h2>Add Item to Vehicle - Plate Number: <span th:text="${vehicle.plateNumber}"></span></h2>
-        
-            <form th:action="@{/vehicle/{plateNumber}/add-item(plateNumber=${vehicle.plateNumber})}" method="POST">
-                <div>
-                    <label for="itemId">Choose an Item:</label>
-                    <select id="itemId" name="itemId">
-                        <option value="" disabled selected>Select Item</option>
-                        <option th:each="item : ${availableItems}" th:value="${item.id}" th:text="${item.name}"></option>
-                    </select>
-                </div>
-        
-                <button type="submit">Add Item</button>
-            </form>
+    <div class="overflow-x-auto">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Code</th>
+                    <th>Weight</th>
+                
+                </tr>
+            </thead>
+            <tbody class="bg-white divide-y divide-gray-200">
+                <tr th:each="item : ${allItems}">
+                    <td th:text="${item.name}"></td>
+                    <td th:text="${item.code}"></td>
+                    <td th:text="${item.weight}"></td>
+                
+                        
+                    
+                    
+                </tr>
+            </tbody>
+        </table>
     </div>
-
-    -->
 
     </body>
